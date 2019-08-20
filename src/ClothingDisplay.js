@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-class Files extends Component {
+class ClothingDisplay extends Component {
   render() {
     return <div />;
   }
 }
 
-export default Files;
+export default ClothingDisplay;

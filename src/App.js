@@ -1,11 +1,17 @@
 import React from "react";
-import Files from "./Files";
+import Header from "./Header";
+import ClothingDisplay from "./ClothingDisplay";
+import Sidebar from "./Sidebar";
+import Footer from "./Footer";
 import "./App.css";
 
 function App() {
   return (
     <div className="container mainContainer mt-3">
-      <Files />
+      <Header />
+      <ClothingDisplay />
+      <Sidebar />
+      <Footer />
     </div>
   );
 }
