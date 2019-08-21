@@ -1,82 +1,43 @@
-import React, { Component, useState } from "react";
-import useCollapse from "react-collapsed";
+import React, {useState} from 'react';
+import useCollapse from 'react-collapsed';
+import Card1 from "./images/Card1.png";
+import Card2 from "./images/Card2.png";
+import Card3 from "./images/Card3.png";
+import Card4 from "./images/Card4.png";
+import Card5 from "./images/Card5.png";
+import Card6 from "./images/Card6.png";
+
+import "./Sidebar.css";
 
 function Sidebar() {
-  const {
-    getCollapseProps: outerCollapseProps,
-    getToggleProps: outerToggleProps,
-    isOpen: outerOpen
-  } = useCollapse({
-    defaultOpen: true
-  });
-  const {
-    getCollapseProps: innerCollapseProps,
-    getToggleProps: innerToggleProps,
-    isOpen: innerOpen
-  } = useCollapse();
+  const [isOpen, setOpen] = useState(false);
+  const {getCollapseProps, getToggleProps} = useCollapse({isOpen});
 
   return (
-    <div className="container slideshow">
-      <React.Fragment>
-        <button {...outerToggleProps({ style: { marginBottom: "1em" } })}>
-          {outerOpen ? "<" : "|"}
-        </button>
-        <section {...outerCollapseProps()}>
-          <p style={{ margin: 0 }}>
-            Friends, Romans, countrymen, lend me your ears;
-            <br />
-            I come to bury Caesar, not to praise him.
-            <br />
-            The evil that men do lives after them;
-            <br />
-            The good is oft interred with their bones;
-            <br />
-            So let it be with Caesar. The noble Brutus
-            <br />
-            Hath told you Caesar was ambitious:
-            <br />
-            If it were so, it was a grievous fault,
-            <br />
-            And grievously hath Caesar answer’d it.
-            <br />
-            Here, under leave of Brutus and the rest–
-            <br />
-            For Brutus is an honourable man;
-            <br />
-            So are they all, all honourable men–
-            <br />
-            Come I to speak in Caesar’s funeral.
-          </p>
-          {!innerOpen && (
-            <button {...innerToggleProps({ style: { display: "block" } })}>
-              >
-            </button>
-          )}
-          <p {...innerCollapseProps({ style: { margin: 0 } })}>
-            He was my friend, faithful and just to me:
-            <br />
-            But Brutus says he was ambitious;
-            <br />
-            And Brutus is an honourable man.
-            <br />
-            He hath brought many captives home to Rome
-            <br />
-            Whose ransoms did the general coffers fill:
-            <br />
-            Did this in Caesar seem ambitious?
-            <br />
-            When that the poor have cried, Caesar hath wept:
-            <br />
-            Ambition should be made of sterner stuff:
-          </p>
-          {innerOpen && (
-            <button {...innerToggleProps({ style: { display: "block" } })}>
-              Back
-            </button>
-          )}
-        </section>
-      </React.Fragment>
-    </div>
+    <React.Fragment>
+      <button
+        {...getToggleProps({
+          onClick: () => setOpen(oldOpen => !oldOpen),
+        })}
+      >
+        {isOpen ? 'Collapse' : 'Expand'}
+      </button>
+      <section {...getCollapseProps()}><div>
+        <div className="container">
+    <div className="gallery-wrap">
+    <div className="item item-1"></div>
+    <div className="item item-2"></div>
+    <div className="item item-3"></div>
+    <div className="item item-4"></div>
+    <div className="item item-5"></div>
+    <div className="item item-6"></div>
+
+  </div>
+ </div>
+      </div></section>
+    </React.Fragment>
   );
 }
+
+
 export default Sidebar;

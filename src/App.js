@@ -11,7 +11,7 @@ function App() {
       <Header />
       <ClothingDisplay />
       <Sidebar />
-      <Footer />
+      <Footer/>
     </div>
   );
 }
