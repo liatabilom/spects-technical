@@ -1,37 +1,36 @@
 import React, {useState} from 'react';
 import useCollapse from 'react-collapsed';
-import Card1 from "./images/Card1.png";
-import Card2 from "./images/Card2.png";
-import Card3 from "./images/Card3.png";
-import Card4 from "./images/Card4.png";
-import Card5 from "./images/Card5.png";
-import Card6 from "./images/Card6.png";
+import Card13 from "./images/Card13.png";
+import Card12 from "./images/Card12.png";
+import Card11 from "./images/Card11.png";
+import Card10 from "./images/Card10.png";
+import Card9 from "./images/Card9.png";
+import Card8 from "./images/Card8.png";
 
 import "./Sidebar.css";
 
 function Sidebar() {
   const [isOpen, setOpen] = useState(false);
-  const {getCollapseProps, getToggleProps} = useCollapse({isOpen});
+  const {getCollapseProps, getToggleProps} = useCollapse({expandStyles:{transitionProperty:"width"}}, {isOpen});
 
   return (
     <React.Fragment>
-      <button
+      <button className="btn btn-dark-outline btnAccordion"
         {...getToggleProps({
           onClick: () => setOpen(oldOpen => !oldOpen),
         })}
       >
-        {isOpen ? 'Collapse' : 'Expand'}
+        {isOpen ? '<' : '|'}
       </button>
       <section {...getCollapseProps()}><div>
-        <div className="container">
+        <div className="containerAccordion d-inline">
     <div className="gallery-wrap">
-    <div className="item item-1"></div>
+    <div className="item item-1 .active"></div>
     <div className="item item-2"></div>
     <div className="item item-3"></div>
     <div className="item item-4"></div>
     <div className="item item-5"></div>
     <div className="item item-6"></div>
-
   </div>
  </div>
       </div></section>

@@ -1,23 +1,17 @@
-html,body{
-  width: 100%;
-  height: 100%;
-}
 
-.container{
-  padding: 30px 0;
-  margin: 0 auto;
-  width: 1140px;
+.btnAccordion{
+position: relative;
+top: 100px;
 }
-
 .gallery-wrap {
 position: relative;
-top: 0px;
-left: 0px;
+top: -450px;
+left: -15px;
 display: flex;
 overflow: hidden;
 flex-direction: row;
-width: 100%;
-height: 70vh;
+width: 70%;
+height: 80vh;
 }
 
 .item {
@@ -34,25 +28,25 @@ height: 70vh;
   }
 
 .item-1 { 
-  background-image: url(./images/Card1.png);
+  background-image: url(./images/Card8.png);
 }
 
 .item-2 { 
-  background-image: url(./images/Card2.png);
+  background-image: url(./images/Card9.png);
 }
 
 .item-3 { 
-  background-image: url(./images/Card3.png);
+  background-image: url(./images/Card10.png);
 }
 .item-4 { 
-  background-image: url(./images/Card4.png);
+  background-image: url(./images/Card11.png);
 }
 
 .item-5 { 
-  background-image: url(./images/Card5.png);
+  background-image: url(./images/Card12.png);
 }
 
 .item-6 { 
-  background-image: url(./images/Card6.png);
+  background-image: url(./images/Card13.png);
 }
 

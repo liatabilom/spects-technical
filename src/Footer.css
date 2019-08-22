@@ -15,6 +15,8 @@
 }
 
 .footer {
-  position: relative;
-  top: 105px;
+  position: absolute;
+  top: 820px;
+  left: 220px;
+  margin: 0px;
 }
